@@ -4,8 +4,6 @@ document.getElementById('donation-tab').addEventListener('click',function(event)
     donateAndHistory('all-cards');
      donateAndHistoryColor(event.target.id);
 
-
-
 })
 document.getElementById('history-tab').addEventListener('click',function(event){
     donateAndHistory('all-history');
@@ -13,30 +11,22 @@ document.getElementById('history-tab').addEventListener('click',function(event){
 })
 
 
+document.getElementById('quota-donate-btn').addEventListener('click', function(){
+    const amount= getValueFromInputField('quota-donation');
+     let accountBalance= getValueFromInnerText('account-balance');
+    const tittle =getStringFromInnerText('quota-title');
+    donationBtnAction('current-quota-donation',accountBalance,amount,tittle)
+})
 
-
-
-
-
-
-
-document.getElementById('donate-btn').addEventListener('click', function(){
-    const addDonate= parseFloat(document.getElementById('quota-donation').value);
-    const currentDonate= parseFloat(document.getElementById('current-quota-donation').innerText);
-    const accountBalance= parseFloat(document.getElementById('account-balance').innerText);
-    
-    
-    if(isNaN(addDonate)){
-        alert('Invalid Input')
-    }
-    else{
-        const updateQuotaDonate=addDonate+currentDonate;
-    document.getElementById('current-quota-donation').innerText= updateQuotaDonate;
-    const remainingAccoutBalance= accountBalance-addDonate;
-    document.getElementById('account-balance').innerText= remainingAccoutBalance;
-    my_modal_1.showModal()
-     const div= document.createElement('div')
-    }
-
-    
+document.getElementById('feni-donate-btn').addEventListener('click',function(){
+    const amount=getValueFromInputField('feni-donation');
+    let accountBalance=getValueFromInnerText('account-balance');
+    const tittle=getStringFromInnerText('feni-title');
+    donationBtnAction('current-feni-donation',accountBalance,amount,tittle)
+})
+document.getElementById('noakhali-donate-btn').addEventListener('click',function(){
+    const amount=getValueFromInputField('noakhali-donation');
+    let accountBalance=getValueFromInnerText('account-balance');
+    const tittle=getStringFromInnerText('noakhali-title');
+    donationBtnAction('current-noakhali-donation',accountBalance,amount,tittle)
 })
