@@ -1,3 +1,25 @@
+
+document.getElementById('donation-tab').addEventListener('click',function(event){
+    
+    donateAndHistory('all-cards');
+     donateAndHistoryColor(event.target.id);
+
+
+
+})
+document.getElementById('history-tab').addEventListener('click',function(event){
+    donateAndHistory('all-history');
+    donateAndHistoryColor(event.target.id);
+})
+
+
+
+
+
+
+
+
+
 document.getElementById('donate-btn').addEventListener('click', function(){
     const addDonate= parseFloat(document.getElementById('quota-donation').value);
     const currentDonate= parseFloat(document.getElementById('current-quota-donation').innerText);
